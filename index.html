@@ -1,16 +1,412 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="wrapper">
-        <header>
-            <h1>HELLO WORLD!!!</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dopefolio</title>
+    <meta name="description" content="Portfolio Template for Developer" />
 
-        </header>
-    </div>
-</body>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <div class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <img
+              src="data:image/jpeg;base64,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"
+              alt="Ram Maheshwari Logo Image"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub">Mr.pie</span>
+        </div>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="./index.html" class="header__link"> Home </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#about" class="header__link">About </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#projects" class="header__link">
+                Projects
+              </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#contact" class="header__link"> Contact </a>
+            </li>
+          </ul>
+          <div class="header__main-ham-menu-cont">
+            <img
+              src="./assets/svg/ham-menu.svg"
+              alt="hamburger menu"
+              class="header__main-ham-menu"
+            />
+            <img
+              src="./assets/svg/ham-menu-close.svg"
+              alt="hamburger menu close"
+              class="header__main-ham-menu-close d-none"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="header__sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="./index.html"> Home </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#about"> About </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#projects"> Projects </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#contact"> Contact </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="home-hero">
+      <div class="home-hero__content">
+        <h1 class="heading-primary">Hey, My name is John Doe</h1>
+        <div class="home-hero__info">
+          <p class="text-primary">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
+            tempora explicabo quae quod deserunt eius sapiente solutions for
+            complex problems
+          </p>
+        </div>
+        <div class="home-hero__cta">
+          <a href="./#projects" class="btn btn--bg">Projects</a>
+        </div>
+      </div>
+      <div class="home-hero__socials">
+        <div class="home-hero__social">
+          <a href="#" class="home-hero__social-icon-link">
+            <img
+              src="./assets/png/linkedin-ico.png"
+              alt="icon"
+              class="home-hero__social-icon"
+            />
+          </a>
+        </div>
+        <div class="home-hero__social">
+          <a href="#" class="home-hero__social-icon-link">
+            <img
+              src="./assets/png/github-ico.png"
+              alt="icon"
+              class="home-hero__social-icon"
+            />
+          </a>
+        </div>
+        <div class="home-hero__social">
+          <a href="#" class="home-hero__social-icon-link">
+            <img
+              src="./assets/png/twitter-ico.png"
+              alt="icon"
+              class="home-hero__social-icon"
+            />
+          </a>
+        </div>
+        <div class="home-hero__social">
+          <a href="#" class="home-hero__social-icon-link">
+            <img
+              src="./assets/png/yt-ico.png"
+              alt="icon"
+              class="home-hero__social-icon"
+            />
+          </a>
+        </div>
+        <div class="home-hero__social">
+          <a
+            href="#"
+            class="home-hero__social-icon-link home-hero__social-icon-link--bd-none"
+          >
+            <img
+              src="./assets/png/insta-ico.png"
+              alt="icon"
+              class="home-hero__social-icon"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="home-hero__mouse-scroll-cont">
+        <div class="mouse"></div>
+      </div>
+    </section>
+    <section id="about" class="about sec-pad">
+      <div class="main-container">
+        <h2 class="heading heading-sec heading-sec__mb-med">
+          <span class="heading-sec__main">About Me</span>
+          <span class="heading-sec__sub">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
+            tempora explicabo quae quod deserunt eius sapiente
+          </span>
+        </h2>
+        <div class="about__content">
+          <div class="about__content-main">
+            <h3 class="about__content-title">Get to know me!</h3>
+            <div class="about__content-details">
+              <p class="about__content-details-para">
+                Hey! It's
+                <strong>John Doe</strong>
+                and I'm a <strong> Frontend Web Developer </strong> located in
+                Los Angeles. I've done
+                <strong> remote </strong>
+                projects for agencies, consulted for startups, and collaborated
+                with talented people to create
+                <strong>digital products </strong>
+                for both business and consumer use.
+              </p>
+              <p class="about__content-details-para">
+                I'm a bit of a digital product junky. Over the years, I've used
+                hundreds of web and mobile apps in different industries and
+                verticals. Feel free to
+                <strong>contact</strong> me here.
+              </p>
+            </div>
+            <a href="./#contact" class="btn btn--med btn--theme dynamicBgClr"
+              >Contact</a
+            >
+          </div>
+          <div class="about__content-skills">
+            <h3 class="about__content-title">My Skills</h3>
+            <div class="skills">
+              <div class="skills__skill">HTML</div>
+              <div class="skills__skill">CSS</div>
+              <div class="skills__skill">JavaScript</div>
+              <div class="skills__skill">React</div>
+              <div class="skills__skill">SASS</div>
+              <div class="skills__skill">GIT</div>
+              <div class="skills__skill">Shopify</div>
+              <div class="skills__skill">Wordpress</div>
+              <div class="skills__skill">Google ADS</div>
+              <div class="skills__skill">Facebook Ads</div>
+              <div class="skills__skill">Android</div>
+              <div class="skills__skill">IOS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="projects sec-pad">
+      <div class="main-container">
+        <h2 class="heading heading-sec heading-sec__mb-bg">
+          <span class="heading-sec__main">Projects</span>
+          <span class="heading-sec__sub">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
+            tempora explicabo quae quod deserunt eius sapiente
+          </span>
+        </h2>
+
+        <div class="projects__content">
+          <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img
+                src="./assets/jpeg/project-mockup-example.jpeg"
+                alt="Software Screenshot"
+                class="projects__row-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">Project 1</h3>
+              <p class="projects__row-content-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                facilis tempora, explicabo quae quod deserunt eius sapiente
+                praesentium.
+              </p>
+              <a
+                href="./project-1.html"
+                class="btn btn--med btn--theme dynamicBgClr"
+                target="_blank"
+                >Case Study</a
+              >
+            </div>
+          </div>
+          <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img
+                src="./assets/jpeg/project-mockup-example.jpeg"
+                alt="Software Screenshot"
+                class="projects__row-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">Project 2</h3>
+              <p class="projects__row-content-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                facilis tempora, explicabo quae quod deserunt eius sapiente
+                praesentium.
+              </p>
+              <a
+                href="./project-2.html"
+                class="btn btn--med btn--theme dynamicBgClr"
+                target="_blank"
+                >Case Study</a
+              >
+            </div>
+          </div>
+          <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img
+                src="./assets/jpeg/project-mockup-example.jpeg"
+                alt="Software Screenshot"
+                class="projects__row-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">Project 3</h3>
+              <p class="projects__row-content-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                facilis tempora, explicabo quae quod deserunt eius sapiente
+                praesentium.
+              </p>
+              <a
+                href="./project-3.html"
+                class="btn btn--med btn--theme dynamicBgClr"
+                target="_blank"
+                >Case Study</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="contact sec-pad dynamicBg">
+      <div class="main-container">
+        <h2 class="heading heading-sec heading-sec__mb-med">
+          <span class="heading-sec__main heading-sec__main--lt">Contact</span>
+          <span class="heading-sec__sub heading-sec__sub--lt">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
+            tempora explicabo quae quod deserunt eius sapiente
+          </span>
+        </h2>
+        <div class="contact__form-container">
+          <form action="#" class="contact__form">
+            <div class="contact__form-field">
+              <label class="contact__form-label" for="name">Name</label>
+              <input
+                required
+                placeholder="Enter Your Name"
+                type="text"
+                class="contact__form-input"
+                name="name"
+                id="name"
+              />
+            </div>
+            <div class="contact__form-field">
+              <label class="contact__form-label" for="email">Email</label>
+              <input
+                required
+                placeholder="Enter Your Email"
+                type="text"
+                class="contact__form-input"
+                name="email"
+                id="email"
+              />
+            </div>
+            <div class="contact__form-field">
+              <label class="contact__form-label" for="message">Message</label>
+              <textarea
+                required
+                cols="30"
+                rows="10"
+                class="contact__form-input"
+                placeholder="Enter Your Message"
+                name="message"
+                id="message"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn--theme contact__btn">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/linkedin-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/github-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/twitter-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/yt-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon main-footer__icon--mr-none"
+                  src="./assets/png/insta-ico.png"
+                  alt="icon"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h4 class="heading heading-sm text-lt">John Doe</h4>
+            <p class="main-footer__short-desc">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit facilis
+              tempora explicabo quae quod deserunt
+            </p>
+          </div>
+        </div>
+
+        <!-- If you give me some credit or shoutout here by linking to my website, then it will be a big thing for me and will help me a lot :) -->
+        <div class="main-footer__lower">
+          &copy; Copyright 2021. Made by
+          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com"
+            >Ram Maheshwari</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="./index.js"></script>
+  </body>
 </html>
